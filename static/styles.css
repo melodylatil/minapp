@@ -24,10 +24,9 @@ body {
 }
 
 .uni {
-    background: rgb(253, 253, 253);
+    background: white;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /*faire un beau entete */
@@ -55,6 +54,7 @@ body {
     border: 3px solid rgb(198, 161, 188);
     overflow: hidden;
 }
+
 /*gere la taille de l'image*/
 #profile-pic img {
     width: 100%;
@@ -71,25 +71,11 @@ body {
     border-radius: 8px;
     padding: 15px;
     gap: 8px;
-    align-items: center;
 }
 
-#title {
-    font-weight: 700;
-    font-size: 1em;
-    color: #2c3e50;
-}
-
-#address, #phone, #mail {
-    font-size: 0.9em;
-    color: #341526;
-}
-
-#mail a {
-    color: #436d89;
-    text-decoration: underline;
-}
-
+#title { font-weight: 700; color: #2c3e50; }
+#address, #phone, #mail { font-size: 0.9em; }
+#mail a { color: #436d89; text-decoration: underline; }
 
 /* les deux colonnes */
 #left-panel  { grid-area: left;  border-right: 1px solid #eee; }
@@ -100,7 +86,6 @@ h2 {
     border-bottom: 2px solid #436d89;
     padding-bottom: 5px;
     margin-top: 25px;
-    margin-bottom: 10px;
 }
 
 /* format 3 couleurs pour chaque experience*/
@@ -115,32 +100,25 @@ h2 {
 }
 
 .where { color: #2c3e50; flex: 1; }
-.what  { flex: 2; text-align: left; padding: 0 10px; }
-.when  { color: #535b5c; font-size: 0.9em; text-align: right; white-space: nowrap; }
+.what  { flex: 2; padding: 0 10px; }
+.when  { color: #535b5c; font-size: 0.9em; white-space: nowrap; }
 
 .details {
     display: block;
     font-size: 0.9em;
     color: #7f8c8d;
-    margin-bottom: 10px;
+    margin-top: 4px;
     line-height: 1.5;
 }
 
 /* le plus dur les barres de niveau */
-.skills-wrapper {
-    margin-top: 10px;
-}
-
-.skill-item {
-    margin-bottom: 14px;
-}
+.skill-item { margin-bottom: 14px; }
 
 .skill-name {
     font-weight: bold;
     display: block;
     margin-bottom: 6px;
     color: #2c3e50;
-    font-size: 0.9em;
 }
 
 .skill-bar-bg {
@@ -148,21 +126,16 @@ h2 {
     height: 10px;
     background-color: #e0e0e0;
     border-radius: 10px;
-    overflow: hidden;   /* ← clé pour que la barre remplie reste dans le track */
+    overflow: hidden;
 }
 
 .skill-bar-fill {
     height: 10px;
     background-color: #34495e;
     border-radius: 10px;
-    /* pas de display:block ni !important qui écrasent le layout */
 }
 
 /*langues: on se sert bcp des autres mises en pages */
-.skills {
-    margin-top: 8px;
-}
-
 .skill {
     font-weight: bold;
     color: #2c3e50;
@@ -170,34 +143,16 @@ h2 {
 }
 
 /*pareil pour les assos*/
-.section-container {
-    margin-top: 20px;
-}
-
-.column-asso h2 {
-    margin-top: 0;
-}
-
 .asso-item {
     font-size: 0.9em;
     margin-bottom: 6px;
-    color: #341526;
 }
 
-.asso-item strong {
-    color: #2c3e50;
-}
+.asso-item strong { color: #2c3e50; }
 
 /*centres d'interet*/
-.column-interets h2 {
-    margin-top: 20px;
-}
-
-.column-interets ul {
-    list-style: disc;
+ul {
     padding-left: 20px;
     font-size: 0.9em;
-    color: #341526;
     line-height: 1.8;
 }
-
