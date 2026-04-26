@@ -1,45 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    
     <title>CV Mélody LATIL</title>
-
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 
 <body>
 
     <div id="main-grid">
-        <div id="header" class="uni">
-            <span> CV Mélody LATIL</span>
-        </div>
 
+        <!-- le titre avec le nom et la photo de profil -->
+        <div id="header" class="uni">
+            <div id="profile-pic">
+                <img src="/static/photo.jpg" alt="Photo de profil">
+            </div>
+            <span>Mélody LATIL</span>
+        </div>
 
         <div id="gadgets">
-            <div id="title">
-                Contact
-            </div>
+            <div id="title">Contact</div>
             <div id="address">
-                <span class="fa-solid fa-house"></span>&nbsp; 270 Rue St Jacques, 75005 Paris
+                270 Rue St Jacques, 75005 Paris
             </div>
             <div id="phone">
-                <span class="fa-solid fa-mobile-screen-button"></span>&nbsp;</span>+33 7 68 70 92 51
+                +33 7 68 70 92 51
             </div>
             <div id="mail">
-                <span class="fa-regular fa-envelope"></span>&nbsp;
-                <a href="mailto:melody.latil@minesparis.psl.eu?subject=votre CV nous intéresse">
-                    melody.latil@minesparis.psl.eu
-                </a>
+                <a href="mailto:melody.latil@minesparis.psl.eu">melody.latil@minesparis.psl.eu</a>
+            <!-- permet de faire un lien cliquable vers le mail -->
             </div>
-            
         </div>
 
+        <!--cote gauche-->
         <div id="left-panel" class="uni">
+
             <div id="formation">
                 <h2>Formation</h2>
                 <div class="where-what-when">
@@ -48,9 +46,8 @@
                     <span class="when">2025-2029</span>
                 </div>
                 <span class="details">
-		  Formation généraliste en ingénierie, sciences et technologies, après les concours d'entrée de CPGE<br/>
+                    Formation généraliste en ingénierie, sciences et technologies, après les concours d'entrée de CPGE.
                 </span>
-
 
                 <div class="where-what-when">
                     <span class="where">Lycée Thiers</span>
@@ -58,56 +55,67 @@
                     <span class="when">2023-2025</span>
                 </div>
                 <span class="details">
-		  Classes préparatoires aux grandes écoles à Marseille, filière Mathématiques-Physique-Sciences de l'Ingénieur<br/>
+                    Classes préparatoires aux grandes écoles à Marseille, filière Mathématiques-Physique-Sciences de l'Ingénieur.
                 </span>
-
             </div>
-        
+
             <div id="competences">
                 <h2>Compétences</h2>
-                <div class="skills">
-                    <div class="skill"><span>Python</span></div>
-                    <div class="meter">
-                        <span style="width: 65%;" class="shadow progress-skills"></span>
+                <!--le but c'est de faire des barres qui montretn mon niveau de competences daasn chaque domaine-->
+                <div class="skills-wrapper">
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 65%;"></div>
+                        </div>
                     </div>
-                    <div class="skill"><span>Organisation</span></div>
-                    <div class="meter">
-                        <span style="width: 80%;" class="shadow progress-skills"></span>
+                    <div class="skill-item">
+                        <span class="skill-name">Organisation</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 80%;"></div>
+                        </div>
                     </div>
-                    <div class="skill"><span>Travail d'équipe</span></div>
-                    <div class="meter">
-                        <span style="width: 70%;" class="shadow progress-skills"></span>
+                    <div class="skill-item">
+                        <span class="skill-name">Travail en équipe</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 70%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div id="langues">
                 <h2>Langues</h2>
+                <!--la c'est juste deux classes différentes pour changer la couleur et l'epaisseur du texte-->
                 <div class="skills">
                     <div class="skill"><span>Français</span></div>
                     <span class="when">Langue maternelle</span>
                     <div class="skill"><span>Anglais</span></div>
                     <span class="when">Niveau C1</span>
+                    <div class="skill"><span>Espagnol</span></div>
+                    <span class="when">Niveau B2</span>
+                    <div class="skill"><span>Chinois</span></div>
+                    <span class="when">Niveau A1</span>
                 </div>
             </div>
-            
+
         </div>
 
+        <!--cote droit-->
         <div id="right-panel" class="uni">
+
             <div id="experience">
                 <h2>Expérience professionnelle</h2>
+
                 <div class="where-what-when">
                     <span class="where">Safran STS</span>
-                    <span class="what"> MIG Optimisation aéronautique, stage de 3 semaines </span>
-                    <span class="when"> novembre 2025 </span>
+                    <span class="what">MIG Optimisation aéronautique, stage de 3 semaines</span>
+                    <span class="when">novembre 2025</span>
                 </div>
                 <span class="details">
-                            Travail de simulation de la résistance des carters en aluminium en collaboration avec Safran STS<br/>                   
-                            Utilisation de Zebulon et de logiciels de calcul aux éléments finis<br/>
+                    Travail de simulation de la résistance des carters en aluminium en collaboration avec Safran STS.<br>
+                    Utilisation de Zebulon et de logiciels de calcul aux éléments finis.
                 </span>
-
-
-
 
                 <div class="where-what-when">
                     <span class="where">Association Cahier Vert</span>
@@ -115,53 +123,52 @@
                     <span class="when">2025-2026</span>
                 </div>
                 <span class="details">
-		  Tutorat dans les matières scientifiques (mathématiques, physique, sciences de l'ingénieur) pour un groupe d'élèves, en plus d'aider à la préparation des concours d'écoles d'ingénieurs<br/>
+                    Tutorat dans les matières scientifiques (mathématiques, physique, sciences de l'ingénieur) pour un groupe d'élèves, en plus d'aider à la préparation des concours d'écoles d'ingénieurs.
                 </span>
 
-                <div class="where-what-when">
-                    <span class="where"> Arkema </span>
-                    <span class="what"> interim dans l'administration de l'usine</span>
-                    <span class="when"> juillet 2024 </span>
+                <div class="where-what-when"> <!--div pour creer une nouvelle ligne, le span s'insere pour + eshetique-->
+                    <span class="where">Arkema</span>
+                    <span class="what">Intérim dans l'administration de l'usine</span>
+                    <span class="when">juillet 2024</span>
                 </div>
                 <span class="details">
-		  Gestion des Demandes de Modification, instauration d'un système de suivi des demandes, rédaction de procédures, travail en collaboration avec les équipes de production et de maintenance sur Excel<br/>
+                    Gestion des Demandes de Modification, instauration d'un système de suivi des demandes, rédaction de procédures, travail en collaboration avec les équipes de production et de maintenance sur Excel.
                 </span>
-            
+            </div>
 
-                <div class="section-container">
-                    <div class="column-asso">
-                        <h2>Vie Associative</h2>
-        
-                        <div class="asso-item">
-                            <strong>Féministes Mines Paris</strong> — <span>Respo lutte contre les VSS</span>
-                        </div>
-                        </div>
 
+            <!--mes assos-->
+            <div class="section-container">
+                <div class="column-asso">
+                    <h2>Vie Associative</h2>
                     <div class="asso-item">
-                        <strong>Minestry</strong> — <span>Respo Lumière (Asso Son & Lumière)</span>
+                        <strong>Féministes Mines Paris</strong> — <span>Respo lutte contre les VSS</span>
                     </div>
-
+                    <div class="asso-item">
+                        <strong>Minestry</strong> — <span>Respo Lumière (Asso Son &amp; Lumière)</span>
+                    </div>
                     <div class="asso-item">
                         <strong>Cahier Vert</strong> — <span>Membre du pôle prépa (Tutorat)</span>
                     </div>
-
                     <div class="asso-item">
                         <strong>WEI</strong> — <span>Pôle Activités</span>
                     </div>
                 </div>
             </div>
 
+            <!--centres d'interet-->
             <div class="column-interets">
+                <!--simple pas de div particulier-->
                 <h2>Centres d'intérêt</h2>
-            <ul>
-                <li> Sport automobile</li>
-                <li> Escalade</li>
-                <li> Visites culturelles</li>
-                <li> Voyage</li>
-            </ul>
+                <ul>
+                    <li>Sport automobile</li>
+                    <li>Escalade</li>
+                    <li>Visites culturelles</li>
+                    <li>Voyage</li>
+                </ul>
             </div>
+
         </div>
-        
 
     </div>
 

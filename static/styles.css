@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 
+/* body c'est tt ce qui est par defaut*/
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #d89db8;
@@ -9,6 +10,7 @@ body {
     color: #341526;
 }
 
+/* je decoupe la page en colonnes apres l entete*/
 #main-grid {
     display: grid;
     max-width: 1000px;
@@ -21,7 +23,6 @@ body {
         "left   right";
 }
 
-/*la couleur de tout les blocs def*/
 .uni {
     background: rgb(253, 253, 253);
     padding: 25px;
@@ -29,24 +30,69 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-#header { 
-    grid-area: header; 
-    text-align: center;
+/*faire un beau entete */
+#header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    gap: 24px;
     background: #2c3e50;
     color: rgb(198, 161, 188);
+    padding: 20px 30px;
+    border-radius: 8px;
 }
 
-/*ça c'est le bloc avec contact, le num et le mail*/
-#gadgets { 
-    grid-area: middle; 
+#header span {
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+/*photo de profil en mode gere l'espace de l'entete pour la photo*/
+#profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgb(198, 161, 188);
+    overflow: hidden;
+}
+/*gere la taille de l'image*/
+#profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*police et espace au niveau de mon contact*/
+#gadgets {
+    grid-area: middle;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: #f5f9f9;
     border-radius: 8px;
     padding: 15px;
+    gap: 8px;
+    align-items: center;
 }
 
-#left-panel { grid-area: left; border-right: 1px solid #eee; }
+#title {
+    font-weight: 700;
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+#address, #phone, #mail {
+    font-size: 0.9em;
+    color: #341526;
+}
+
+#mail a {
+    color: #436d89;
+    text-decoration: underline;
+}
+
+
+/* les deux colonnes */
+#left-panel  { grid-area: left;  border-right: 1px solid #eee; }
 #right-panel { grid-area: right; }
 
 h2 {
@@ -54,58 +100,104 @@ h2 {
     border-bottom: 2px solid #436d89;
     padding-bottom: 5px;
     margin-top: 25px;
+    margin-bottom: 10px;
 }
 
+/* format 3 couleurs pour chaque experience*/
 .where-what-when {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     font-weight: bold;
     margin-top: 15px;
-    gap: 10px; /*espace*/
-    flex-wrap: wrap; /* eviter que tout se chevauche*/
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .where { color: #2c3e50; flex: 1; }
-.what { flex: 2; text-align: left; padding: 0 10px; }
-.when { color: #535b5c; font-size: 0.9em; text-align: right; }
+.what  { flex: 2; text-align: left; padding: 0 10px; }
+.when  { color: #535b5c; font-size: 0.9em; text-align: right; white-space: nowrap; }
 
 .details {
     display: block;
     font-size: 0.9em;
     color: #7f8c8d;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-/* --- SECTION COMPÉTENCES --- */
-
-#competences .skills {
-    margin-top: 15px;
-}
-
-/* On force le nom de la compétence à prendre toute la ligne */
-#competences .skill {
-    display: block;
-    font-weight: bold;
+/* le plus dur les barres de niveau */
+.skills-wrapper {
     margin-top: 10px;
-    margin-bottom: 5px;
 }
 
-/* Le rail gris */
-#competences .meter {
-    display: block; /* Important */
+.skill-item {
+    margin-bottom: 14px;
+}
+
+.skill-name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #2c3e50;
+    font-size: 0.9em;
+}
+
+.skill-bar-bg {
     width: 100%;
-    height: 12px;
-    background-color: #eee !important; /* On force la couleur grise */
+    height: 10px;
+    background-color: #e0e0e0;
     border-radius: 10px;
-    position: relative;
-    overflow: hidden;
+    overflow: hidden;   /* ← clé pour que la barre remplie reste dans le track */
 }
 
-/* La barre de progression */
-#competences .progress-skills {
-    display: block !important;
-    height: 100%;
-    background-color: #34495e !important; /* Couleur sombre */
+.skill-bar-fill {
+    height: 10px;
+    background-color: #34495e;
     border-radius: 10px;
+    /* pas de display:block ni !important qui écrasent le layout */
 }
+
+/*langues: on se sert bcp des autres mises en pages */
+.skills {
+    margin-top: 8px;
+}
+
+.skill {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+/*pareil pour les assos*/
+.section-container {
+    margin-top: 20px;
+}
+
+.column-asso h2 {
+    margin-top: 0;
+}
+
+.asso-item {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+    color: #341526;
+}
+
+.asso-item strong {
+    color: #2c3e50;
+}
+
+/*centres d'interet*/
+.column-interets h2 {
+    margin-top: 20px;
+}
+
+.column-interets ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: #341526;
+    line-height: 1.8;
+}
+
